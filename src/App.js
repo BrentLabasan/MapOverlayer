@@ -11,17 +11,18 @@ function App() {
       {/* {opacityBalance} */}
       
       <div className="containerMultipleLayers">
-        <Layer numbLayer={1} opacity={ 1 - opacityBalance / 100 } gMapQuery="NYC Central Park" />
-        <Layer numbLayer={2} opacity={ opacityBalance / 100 } gMapQuery="Space Needle" />
+        <Layer numbLayer={1} opacity={ 1 - opacityBalance / 100 } gMapQuery="NYC Central Park" zoomLevel={zoomLevel} />
+        <Layer numbLayer={2} opacity={ opacityBalance / 100 } gMapQuery="Space Needle" zoomLevel={zoomLevel} />
       </div>
 
       <div id="controls">
         Opacity Balance
         <br/>
         <input onChange={(e) => setOpacityBalance(e.target.value)} type="range" min="1" max="100" defaultValue={opacityBalance} className="slider" id="myRange"/>
+        <br/>
         Zoom Level
         <br/>
-        <input onChange={(e) => setZoomLevel(e.target.value)} type="number" min="1" max="21" defaultValue={zoomLevel} /> {zoomLevel}
+        <input id="ctrlZoomLevel" onChange={(e) => setZoomLevel(e.target.value)} type="number" min="1" max="21" defaultValue={zoomLevel} /> {zoomLevel}
       </div>
 
       {/* <header className="App-header">

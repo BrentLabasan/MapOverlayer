@@ -7,6 +7,8 @@ function Layer(props) {
       <br/>
       opacity is {props.opacity}
       <br/>
+      zoomLevel is {props.zoomLevel}
+      <br/>
 
       <iframe
         width="600"
@@ -14,7 +16,7 @@ function Layer(props) {
         style={{border:0}}
         loading="lazy"
         allowFullScreen
-        src={`https://www.google.com/maps/embed/v1/place?q=${props.gMapQuery}&key=AIzaSyCapkMXSPTKQO9Sz40Q9b7UhOTxY0djiaM`}
+        src={`https://www.google.com/maps/embed/v1/place?q=${props.gMapQuery}&zoom=${props.zoomLevel}&key=AIzaSyCapkMXSPTKQO9Sz40Q9b7UhOTxY0djiaM`}
       >
       </iframe>
     </div>
