@@ -10,8 +10,8 @@ function App() {
       {/* {opacityBalance} */}
       
       <div className="containerMultipleLayers">
-        <Layer numbLayer={1}/>
-        <Layer numbLayer={2}/>
+        <Layer numbLayer={1} opacity={ 1 - opacityBalance / 100 } />
+        <Layer numbLayer={2} opacity={ opacityBalance / 100 } />
       </div>
 
       <div id="controls">

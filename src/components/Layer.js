@@ -2,8 +2,10 @@ import './Layer.css';
 
 function Layer(props) {
   return (
-    <div>
+    <div className="mapLayer">
       This is a layer {props.numbLayer}
+      <br/>
+      opacity is {props.opacity}
     </div>
   );
 }
