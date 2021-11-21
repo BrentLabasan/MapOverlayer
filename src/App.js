@@ -10,8 +10,8 @@ function App() {
       {/* {opacityBalance} */}
       
       <div className="containerMultipleLayers">
-        <Layer numbLayer={1} opacity={ 1 - opacityBalance / 100 } />
-        <Layer numbLayer={2} opacity={ opacityBalance / 100 } />
+        <Layer numbLayer={1} opacity={ 1 - opacityBalance / 100 } gMapQuery="NYC Central Park" />
+        <Layer numbLayer={2} opacity={ opacityBalance / 100 } gMapQuery="Space Needle" />
       </div>
 
       <div id="controls">

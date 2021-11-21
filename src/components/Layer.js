@@ -6,6 +6,17 @@ function Layer(props) {
       This is a layer {props.numbLayer}
       <br/>
       opacity is {props.opacity}
+      <br/>
+
+      <iframe
+        width="600"
+        height="450"
+        style={{border:0}}
+        loading="lazy"
+        allowFullScreen
+        src={`https://www.google.com/maps/embed/v1/place?q=${props.gMapQuery}&key=AIzaSyCapkMXSPTKQO9Sz40Q9b7UhOTxY0djiaM`}
+      >
+      </iframe>
     </div>
   );
 }
