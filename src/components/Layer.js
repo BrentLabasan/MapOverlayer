@@ -2,7 +2,10 @@ import './Layer.css';
 
 function Layer(props) {
   return (
-    <div className="mapLayer" style={{ opacity: props.opacity }}>
+    <div className="mapLayer" style={{ 
+      opacity: props.opacity,
+      pointerEvents: props.numbLayer === props.selectedLayer ? 'auto' : 'none'
+    }}>
       This is a layer {props.numbLayer}
       <br/>
       opacity is {props.opacity}

@@ -12,17 +12,17 @@ function App() {
       {/* {opacityBalance} */}
       
       <div className="containerMultipleLayers">
-        <Layer numbLayer={1} opacity={ 1 - opacityBalance / 100 } gMapQuery="NYC Central Park" zoomLevel={zoomLevel} />
-        <Layer numbLayer={2} opacity={ opacityBalance / 100 } gMapQuery="Space Needle" zoomLevel={zoomLevel} />
+        <Layer numbLayer={1} selectedLayer={selectedLayer} opacity={ 1 - opacityBalance / 100 } gMapQuery="NYC Central Park" zoomLevel={zoomLevel} />
+        <Layer numbLayer={2} selectedLayer={selectedLayer} opacity={ opacityBalance / 100 } gMapQuery="Space Needle" zoomLevel={zoomLevel} />
       </div>
 
       <div id="controls">
         Layer Chooser {selectedLayer}
         <br/>
-        <button value={1} onClick={(e) => setSelectedLayer(e.target.value)} >
+        <button value={1} onClick={(e) => setSelectedLayer(parseInt(e.target.value))} >
         1
         </button>
-        <button value={2} onClick={(e) => setSelectedLayer(e.target.value)} >
+        <button value={2} onClick={(e) => setSelectedLayer(parseInt(e.target.value))} >
         2
         </button>
 
