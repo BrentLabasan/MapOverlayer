@@ -1,9 +1,14 @@
+import React, { useState } from 'react';
 import './App.css';
 import Layer from './components/Layer';
 
 function App() {
+  const [opacityBalance, setOpacityBalance] = useState(50);
+
   return (
     <div className="App">
+      {/* {opacityBalance} */}
+      
       <div className="containerMultipleLayers">
         <Layer numbLayer={1}/>
         <Layer numbLayer={2}/>
@@ -11,7 +16,7 @@ function App() {
 
       <div id="controls">
         Opacity Balance
-        <input type="range" min="1" max="100" defaultValue="50" className="slider" id="myRange"/>
+        <input onChange={(e) => setOpacityBalance(e.target.value)} type="range" min="1" max="100" defaultValue={opacityBalance} className="slider" id="myRange"/>
       </div>
 
       {/* <header className="App-header">
