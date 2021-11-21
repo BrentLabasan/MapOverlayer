@@ -4,6 +4,7 @@ import Layer from './components/Layer';
 
 function App() {
   const [opacityBalance, setOpacityBalance] = useState(50);
+  const [zoomLevel, setZoomLevel] = useState(15);
 
   return (
     <div className="App">
@@ -16,7 +17,11 @@ function App() {
 
       <div id="controls">
         Opacity Balance
+        <br/>
         <input onChange={(e) => setOpacityBalance(e.target.value)} type="range" min="1" max="100" defaultValue={opacityBalance} className="slider" id="myRange"/>
+        Zoom Level
+        <br/>
+        <input onChange={(e) => setZoomLevel(e.target.value)} type="number" min="1" max="21" defaultValue={zoomLevel} /> {zoomLevel}
       </div>
 
       {/* <header className="App-header">
