@@ -5,6 +5,7 @@ import Layer from './components/Layer';
 function App() {
   const [opacityBalance, setOpacityBalance] = useState(50);
   const [zoomLevel, setZoomLevel] = useState(15);
+  const [selectedLayer, setSelectedLayer] = useState(1);
 
   return (
     <div className="App">
@@ -16,9 +17,22 @@ function App() {
       </div>
 
       <div id="controls">
+        Layer Chooser {selectedLayer}
+        <br/>
+        <button value={1} onClick={(e) => setSelectedLayer(e.target.value)} >
+        1
+        </button>
+        <button value={2} onClick={(e) => setSelectedLayer(e.target.value)} >
+        2
+        </button>
+
+<br/>
+<br/>
+
         Opacity Balance
         <br/>
         <input onChange={(e) => setOpacityBalance(e.target.value)} type="range" min="1" max="100" defaultValue={opacityBalance} className="slider" id="myRange"/>
+        <br/>
         <br/>
         Zoom Level
         <br/>
