@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
 import Layer from './components/Layer';
+import LocationInputField from './components/LocationInputField';
 
 function App() {
   const [opacityBalance, setOpacityBalance] = useState(50);
   const [zoomLevel, setZoomLevel] = useState(15);
   const [selectedLayer, setSelectedLayer] = useState(1);
 
+  const [layer1Query, setLayer1Query] = useState('NYC Central Park');
+  const [layer2Query, setLayer2Query] = useState('Space Needle');
+
+  function handleSetLayer1Query(value) {
+    alert();
+
+    setLayer1Query(value);
+  }
+
   return (
     <div className="App">
       {/* {opacityBalance} */}
       
       <div className="containerMultipleLayers">
-        <Layer numbLayer={1} selectedLayer={selectedLayer} opacity={ 1 - opacityBalance / 100 } gMapQuery="NYC Central Park" zoomLevel={zoomLevel} />
-        <Layer numbLayer={2} selectedLayer={selectedLayer} opacity={ opacityBalance / 100 } gMapQuery="Space Needle" zoomLevel={zoomLevel} />
+        <Layer numbLayer={1} selectedLayer={selectedLayer} opacity={ 1 - opacityBalance / 100 } gMapQuery={layer1Query} zoomLevel={zoomLevel} />
+        <Layer numbLayer={2} selectedLayer={selectedLayer} opacity={ opacityBalance / 100 } gMapQuery={layer2Query} zoomLevel={zoomLevel} />
       </div>
 
       <div id="controls">
@@ -37,6 +47,18 @@ function App() {
         Zoom Level
         <br/>
         <input id="ctrlZoomLevel" onChange={(e) => setZoomLevel(e.target.value)} type="number" min="1" max="21" defaultValue={zoomLevel} /> {zoomLevel}
+      
+        <br/>
+        <br/>
+
+        Location 1 | TOP LEVEL: {layer1Query}
+        {/* <input type="text" value={layer1Query} /> <button onClick={(e) => setLayer1Query( this.value)}>SET</button> */}
+        <LocationInputField layerQuery={layer1Query} setLayer1Query={(value) => handleSetLayer1Query(value)} />
+        <br/>
+        Location 2 &nbsp;
+        {/* <input type="text" value={layer2Query} /> <button>SET</button> */}
+      
+      
       </div>
 
       {/* <header className="App-header">
