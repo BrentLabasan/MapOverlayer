@@ -25,6 +25,7 @@ function App() {
   return (
     <div className="App">
       {/* {opacityBalance} */}
+      <h1>MAP OVERLAYER</h1>
       
       <div className="containerMultipleLayers">
         <Layer numbLayer={1} selectedLayer={selectedLayer} opacity={ 1 - opacityBalance / 100 } gMapQuery={layerQueries[0]} zoomLevel={zoomLevel} />

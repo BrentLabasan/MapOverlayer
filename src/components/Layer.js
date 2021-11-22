@@ -6,16 +6,17 @@ function Layer(props) {
       opacity: props.opacity,
       pointerEvents: props.numbLayer === props.selectedLayer ? 'auto' : 'none'
     }}>
-      This is a layer {props.numbLayer}
+
+      {/* This is a layer {props.numbLayer}
       <br/>
       opacity is {props.opacity}
       <br/>
       zoomLevel is {props.zoomLevel}
-      <br/>
+      <br/> */}
 
       <iframe
-        width="600"
-        height="450"
+        width="100%"
+        height="700"
         style={{border:0}}
         loading="lazy"
         allowFullScreen

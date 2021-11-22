@@ -39,11 +39,16 @@
 
 .containerMultipleLayers {
   display: inline-block;
-  border: 2px dotted green;
+  border: 1px dashed green;
   width: 90%;
   height: 700px;
 }
 
 #ctrlZoomLevel {
   height: 20px;
+}
+
+h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
 }
