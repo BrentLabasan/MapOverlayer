@@ -59,11 +59,15 @@ function App() {
 
         Location 1 | TOP LEVEL: { layerQueries[0] }
         {/* <input type="text" value={layer1Query} /> <button onClick={(e) => setLayer1Query( this.value)}>SET</button> */}
-        <LocationInputField numbLayer={1} layerQuery={ layerQueries[0] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} />
+        <LocationInputField numbLayer={1} layerQuery={ layerQueries[0] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} 
+          locationsList={['French Quarter', 'Vatican City', 'Great Wall of China', 'Tokyo',' Las Vegas']}
+        />
         <br/>
         Location 2 | TOP LEVEL: { layerQueries[1] }
         {/* <input type="text" value={layer2Query} /> <button>SET</button> */}
-        <LocationInputField numbLayer={2} layerQuery={ layerQueries[1] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} />
+        <LocationInputField numbLayer={2} layerQuery={ layerQueries[1] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} 
+          locationsList={[, 'Los Angeles', 'Seoul', 'Honolulu',' City Park New Orleans']}
+        />
       
       
       </div>
