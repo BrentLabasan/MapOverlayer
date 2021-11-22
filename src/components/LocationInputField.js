@@ -5,7 +5,8 @@ function Layer(props) {
   const [layerQuery, setLayerQuery] = useState(props.layerQuery);
 
   function handleButtonClick() {
-    props.setLayer1Query(layerQuery);
+    // debugger;
+    props.setLayer1Query(props.numbLayer, layerQuery);
   }
 
   return (

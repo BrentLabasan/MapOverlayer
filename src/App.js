@@ -8,13 +8,18 @@ function App() {
   const [zoomLevel, setZoomLevel] = useState(15);
   const [selectedLayer, setSelectedLayer] = useState(1);
 
-  const [layer1Query, setLayer1Query] = useState('NYC Central Park');
-  const [layer2Query, setLayer2Query] = useState('Space Needle');
+  // const [layer1Query, setLayer1Query] = useState('NYC Central Park');
+  // const [layer2Query, setLayer2Query] = useState('Space Needle');
+  // https://dev.to/andyrewlee/cheat-sheet-for-updating-objects-and-arrays-in-react-state-48np
+  const [layerQueries, setLayerQueries] = useState(['NYC Central Park', 'Space Needle']);
 
-  function handleSetLayer1Query(value) {
-    alert();
+  function handleSetLayer1Query(numbLayer, layerQuery) {
+    // debugger;
+    // alert(numbLayer + layerQuery);
 
-    setLayer1Query(value);
+    const newLayerQueries = [...layerQueries];
+    newLayerQueries[numbLayer - 1] = layerQuery;
+    setLayerQueries(newLayerQueries);
   }
 
   return (
@@ -22,8 +27,8 @@ function App() {
       {/* {opacityBalance} */}
       
       <div className="containerMultipleLayers">
-        <Layer numbLayer={1} selectedLayer={selectedLayer} opacity={ 1 - opacityBalance / 100 } gMapQuery={layer1Query} zoomLevel={zoomLevel} />
-        <Layer numbLayer={2} selectedLayer={selectedLayer} opacity={ opacityBalance / 100 } gMapQuery={layer2Query} zoomLevel={zoomLevel} />
+        <Layer numbLayer={1} selectedLayer={selectedLayer} opacity={ 1 - opacityBalance / 100 } gMapQuery={layerQueries[0]} zoomLevel={zoomLevel} />
+        <Layer numbLayer={2} selectedLayer={selectedLayer} opacity={ opacityBalance / 100 } gMapQuery={layerQueries[1]} zoomLevel={zoomLevel} />
       </div>
 
       <div id="controls">
@@ -51,12 +56,13 @@ function App() {
         <br/>
         <br/>
 
-        Location 1 | TOP LEVEL: {layer1Query}
+        Location 1 | TOP LEVEL: { layerQueries[0] }
         {/* <input type="text" value={layer1Query} /> <button onClick={(e) => setLayer1Query( this.value)}>SET</button> */}
-        <LocationInputField layerQuery={layer1Query} setLayer1Query={(value) => handleSetLayer1Query(value)} />
+        <LocationInputField numbLayer={1} layerQuery={ layerQueries[0] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} />
         <br/>
-        Location 2 &nbsp;
+        Location 2 | TOP LEVEL: { layerQueries[1] }
         {/* <input type="text" value={layer2Query} /> <button>SET</button> */}
+        <LocationInputField numbLayer={2} layerQuery={ layerQueries[1] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} />
       
       
       </div>
