@@ -11,7 +11,7 @@ function App() {
   // const [layer1Query, setLayer1Query] = useState('NYC Central Park');
   // const [layer2Query, setLayer2Query] = useState('Space Needle');
   // https://dev.to/andyrewlee/cheat-sheet-for-updating-objects-and-arrays-in-react-state-48np
-  const [layerQueries, setLayerQueries] = useState(['NYC Central Park', 'Space Needle']);
+  const [layerQueries, setLayerQueries] = useState(['NYC Central Park', 'City Park New Orleans']);
 
   function handleSetLayer1Query(numbLayer, layerQuery) {
     // debugger;
@@ -25,8 +25,11 @@ function App() {
   return (
     <div className="App">
       {/* {opacityBalance} */}
+      <div style={{position: 'relative'}}>
       <h1>MAP OVERLAYER</h1>
-      
+      <span style={{position: 'absolute', bottom: -10, fontSize: '14px', margin: '0 0 0 100px' }}>by Brent Labasan</span>
+      </div>
+
       <div className="containerMultipleLayers">
         <Layer numbLayer={1} selectedLayer={selectedLayer} opacity={ 1 - opacityBalance / 100 } gMapQuery={layerQueries[0]} zoomLevel={zoomLevel} />
         <Layer numbLayer={2} selectedLayer={selectedLayer} opacity={ opacityBalance / 100 } gMapQuery={layerQueries[1]} zoomLevel={zoomLevel} />
@@ -60,13 +63,13 @@ function App() {
         Location 1 | TOP LEVEL: { layerQueries[0] }
         {/* <input type="text" value={layer1Query} /> <button onClick={(e) => setLayer1Query( this.value)}>SET</button> */}
         <LocationInputField numbLayer={1} layerQuery={ layerQueries[0] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} 
-          locationsList={['French Quarter', 'Vatican City', 'Great Wall of China', 'Tokyo',' Las Vegas']}
+          locationsList={['NYC Central Park', 'French Quarter', 'Vatican City', 'Great Wall of China', 'Tokyo',' Las Vegas']}
         />
         <br/>
         Location 2 | TOP LEVEL: { layerQueries[1] }
         {/* <input type="text" value={layer2Query} /> <button>SET</button> */}
         <LocationInputField numbLayer={2} layerQuery={ layerQueries[1] } setLayer1Query={(numbLayer, layerQuery) => handleSetLayer1Query(numbLayer, layerQuery)} 
-          locationsList={[, 'Los Angeles', 'Seoul', 'Honolulu',' City Park New Orleans']}
+          locationsList={['City Park New Orleans', 'Los Angeles', 'Seoul', 'Honolulu']}
         />
       
       

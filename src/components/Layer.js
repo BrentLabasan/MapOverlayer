@@ -20,6 +20,7 @@ function Layer(props) {
         style={{border:0}}
         loading="lazy"
         allowFullScreen
+        disableDefaultUI
         src={`https://www.google.com/maps/embed/v1/place?q=${props.gMapQuery}&zoom=${props.zoomLevel}&key=AIzaSyCapkMXSPTKQO9Sz40Q9b7UhOTxY0djiaM`}
       >
       </iframe>
